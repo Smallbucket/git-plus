@@ -6,7 +6,8 @@
   - [分支查看](#branch_log)     
   - [分支比较](#branch_diff)     
   - [分支跟踪](#branch_track)     
-  - [创建远程分支](#branch_remoteadd)     
+  - [创建远程分支](#branch_remoteadd)       
+  - [拉取远程分支，并创建本地分支](#branch_checkout)                 
   - [删除远程分支](#branch_remotedelete)        
   - [修改分支名称](#branch_rename)     
   - [分支合并](#branch_merge)      
@@ -213,7 +214,15 @@ git branch 命令仅仅创建一个新分支，并不会自动切换到新分支
 
     $ git push origin test:master         // 提交本地test分支作为远程的master分支
     $ git push origin test:test           // 提交本地test分支作为远程的test分支
- 
+
+### <a id="branch_checkout">拉取远程分支，并创建本地分支</a>
+
+    git checkout -b dev origin/dev
+
+如果报错提示远程没有该分支，先执行一下命令：
+
+    git fetch origin
+    
 ### <a id="branch_remotedelete">删除远程分支</a>
 从服务器上删除 serverfix 分支，运行下面的命令：
 
